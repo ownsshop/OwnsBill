@@ -1,0 +1,6 @@
+{
+  "name": "OwnsBill",
+  "description": "ISP Reseller Billing System with billing dashboards, client management, payment reminders, and live chat, in full Bengali.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

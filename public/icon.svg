@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052D4" />
+      <stop offset="50%" stop-color="#4364F7" />
+      <stop offset="100%" stop-color="#6FB1FC" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circular/Orbit outer ring -->
+  <path d="M 50,86 A 36,36 0 1,1 50,14" fill="none" stroke="url(#blueGrad)" stroke-width="6" stroke-linecap="round" />
+
+  <!-- Wi-Fi red dot at center of wave -->
+  <circle cx="30" cy="22" r="4" fill="#D32F2F" />
+  
+  <!-- Wi-Fi waves -->
+  <path d="M 21,18 A 12,12 0 0,1 39,18" fill="none" stroke="#0052D4" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M 16,13 A 18,18 0 0,1 44,13" fill="none" stroke="#0052D4" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Data particles (Green / Red) scattering on the right -->
+  <!-- Top Right Group -->
+  <rect x="52" y="6" width="3.5" height="3" rx="0.5" fill="#2E7D32" transform="rotate(15 52 6)" />
+  <rect x="61" y="5" width="3" height="3" rx="0.5" fill="#2E7D32" transform="rotate(-10 61 5)" />
+  <rect x="70" y="7" width="2.5" height="2.5" rx="0.5" fill="#2E7D32" transform="rotate(5 70 7)" />
+  <rect x="78" y="9" width="3.2" height="2.5" rx="0.5" fill="#2E7D32" transform="rotate(25 78 9)" />
+
+  <rect x="56" y="15" width="3.2" height="3.2" rx="0.5" fill="#2E7D32" transform="rotate(-5 56 15)" />
+  <rect x="65" y="17" width="2.5" height="2.5" rx="0.5" fill="#D32F2F" transform="rotate(20 65 17)" />
+  <rect x="73" y="16" width="3.5" height="2.5" rx="0.5" fill="#2E7D32" transform="rotate(-15 73 16)" />
+  <rect x="82" y="19" width="3" height="3" rx="0.5" fill="#2E7D32" transform="rotate(10 82 19)" />
+
+  <rect x="60" y="26" width="3.5" height="2.5" rx="0.5" fill="#2E7D32" transform="rotate(8 60 26)" />
+  <rect x="69" y="28" width="3.2" height="3.2" rx="0.5" fill="#2E7D32" transform="rotate(-12 69 28)" />
+  <rect x="76" y="27" width="2.5" height="2.5" rx="0.5" fill="#D32F2F" transform="rotate(45 76 27)" />
+  <rect x="86" y="30" width="3.5" height="3.5" rx="0.5" fill="#2E7D32" transform="rotate(15 86 30)" />
+
+  <!-- Bottom Right Group -->
+  <rect x="52" y="78" width="3" height="3" rx="0.5" fill="#D32F2F" transform="rotate(12 52 78)" />
+  <rect x="60" y="83" width="3.5" height="2.5" rx="0.5" fill="#D32F2F" transform="rotate(-15 60 83)" />
+  <rect x="67" y="79" width="2.5" height="2.5" rx="0.5" fill="#D32F2F" transform="rotate(25 67 79)" />
+  <rect x="73" y="85" width="3.2" height="3.2" rx="0.5" fill="#D32F2F" transform="rotate(-5 73 85)" />
+  <rect x="80" y="81" width="3.5" height="2.5" rx="0.5" fill="#D32F2F" transform="rotate(18 80 81)" />
+  <rect x="88" y="83" width="2.5" height="2.5" rx="0.5" fill="#D32F2F" transform="rotate(-30 88 83)" />
+
+  <!-- Minimalist central stylized "O" inside a red pill -->
+  <path d="M 25,43 L 65,43 A 7,7 0 0,1 65,57 L 25,57 Z" fill="#D32F2F" />
+  <text x="31" y="53" font-family="'Inter', sans-serif" font-weight="900" font-size="10.5" fill="#FFFFFF">Owns</text>
+  <text x="70" y="53" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5" fill="#8E8E93">Link</text>
+</svg>

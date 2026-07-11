@@ -1,0 +1,211 @@
+{
+  "entities": {
+    "users": {
+      "title": "User",
+      "description": "System users (admins, staff, or customers)",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Auth UID" },
+        "name": { "type": "string", "description": "Full name" },
+        "email": { "type": "string", "description": "Email address" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "role": { "type": "string", "enum": ["admin", "staff", "customer"], "description": "Role of the user" },
+        "zone": { "type": "string", "description": "Zone assigned (for staff/customer)" },
+        "area": { "type": "string", "description": "Area assigned (for staff/customer)" },
+        "balance": { "type": "number", "description": "Current balance" },
+        "salary": { "type": "number", "description": "Staff monthly salary" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Creation timestamp" }
+      },
+      "required": ["uid", "name", "email", "role"]
+    },
+    "customers": {
+      "title": "Customer",
+      "description": "Detailed customer broadband accounts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Customer Document ID (or UID)" },
+        "name": { "type": "string", "description": "Customer name" },
+        "phone": { "type": "string", "description": "Phone number" },
+        "email": { "type": "string", "description": "Email address" },
+        "address": { "type": "string", "description": "Full address" },
+        "nid": { "type": "string", "description": "NID number" },
+        "zone": { "type": "string", "description": "Zone name" },
+        "area": { "type": "string", "description": "Area name" },
+        "packageId": { "type": "string", "description": "ID of the broadband package" },
+        "onuMac": { "type": "string", "description": "ONU MAC Address" },
+        "status": { "type": "string", "enum": ["active", "expired", "locked"], "description": "Current connection status" },
+        "dueAmount": { "type": "number", "description": "Total dues" },
+        "promiseDate": { "type": "string", "description": "Payment promise date (YYYY-MM-DD)" },
+        "lat": { "type": "number", "description": "Latitude for location" },
+        "lng": { "type": "number", "description": "Longitude for location" },
+        "staffId": { "type": "string", "description": "Assigned staff member UID" }
+      },
+      "required": ["id", "name", "phone", "zone", "area", "packageId", "status"]
+    },
+    "packages": {
+      "title": "Package",
+      "description": "ISP Broadband Internet Packages",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique package identifier" },
+        "name": { "type": "string", "description": "Package name (e.g. 10 Mbps)" },
+        "speed": { "type": "string", "description": "Internet speed" },
+        "price": { "type": "number", "description": "Monthly price in BDT" },
+        "oltProfile": { "type": "string", "description": "OLT configuration profile name" }
+      },
+      "required": ["id", "name", "speed", "price"]
+    },
+    "payments": {
+      "title": "Payment",
+      "description": "Billing payments collected from customers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique transaction ID" },
+        "customerId": { "type": "string", "description": "Customer ID who paid" },
+        "staffId": { "type": "string", "description": "Collector staff ID or empty for online" },
+        "amount": { "type": "number", "description": "Amount paid" },
+        "month": { "type": "string", "description": "Billing month (e.g. 2026-07)" },
+        "method": { "type": "string", "enum": ["cash", "bkash", "nagad"], "description": "Payment method" },
+        "trxId": { "type": "string", "description": "TrxID of bKash/Nagad" },
+        "status": { "type": "string", "enum": ["pending", "approved"], "description": "Payment approval status" },
+        "date": { "type": "string", "description": "Payment date" }
+      },
+      "required": ["id", "customerId", "amount", "month", "method", "status", "date"]
+    },
+    "deposits": {
+      "title": "Deposit",
+      "description": "Cash deposits submitted by staff to admin",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Deposit ID" },
+        "staffId": { "type": "string", "description": "UID of the staff who deposited" },
+        "amount": { "type": "number", "description": "Deposit amount" },
+        "method": { "type": "string", "description": "Payment gateway/method" },
+        "trxId": { "type": "string", "description": "Transaction identifier" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"], "description": "Deposit status" },
+        "date": { "type": "string", "description": "Submission date" }
+      },
+      "required": ["id", "staffId", "amount", "status", "date"]
+    },
+    "salaryRequests": {
+      "title": "Salary Request",
+      "description": "Staff monthly salary requests",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Salary request ID" },
+        "staffId": { "type": "string", "description": "Staff UID" },
+        "amount": { "type": "number", "description": "Salary amount requested" },
+        "status": { "type": "string", "enum": ["pending", "approved", "rejected"], "description": "Request status" },
+        "date": { "type": "string", "description": "Request date" }
+      },
+      "required": ["id", "staffId", "amount", "status", "date"]
+    },
+    "tickets": {
+      "title": "Ticket",
+      "description": "Customer support tickets with message threads",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Ticket identifier" },
+        "customerId": { "type": "string", "description": "Customer UID" },
+        "title": { "type": "string", "description": "Subject of the ticket" },
+        "status": { "type": "string", "enum": ["open", "closed"], "description": "Status of support case" },
+        "assignedTo": { "type": "string", "description": "Assigned staff member UID or empty" }
+      },
+      "required": ["id", "customerId", "title", "status"]
+    },
+    "zones": {
+      "title": "Zone",
+      "description": "ISP operational zones",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Zone ID" },
+        "name": { "type": "string", "description": "Zone name" }
+      },
+      "required": ["id", "name"]
+    },
+    "areas": {
+      "title": "Area",
+      "description": "Sub-areas inside a zone",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Area ID" },
+        "name": { "type": "string", "description": "Area name" },
+        "zoneId": { "type": "string", "description": "Parent Zone ID" }
+      },
+      "required": ["id", "name", "zoneId"]
+    },
+    "expenses": {
+      "title": "Expense",
+      "description": "Office or network expenses",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Expense ID" },
+        "title": { "type": "string", "description": "Expense title/reason" },
+        "amount": { "type": "number", "description": "Amount spent" },
+        "date": { "type": "string", "description": "Expense date" },
+        "addedBy": { "type": "string", "description": "Admin or staff UID who logged it" }
+      },
+      "required": ["id", "title", "amount", "date", "addedBy"]
+    },
+    "invoices": {
+      "title": "Invoice",
+      "description": "Monthly customer invoices",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Invoice ID" },
+        "customerId": { "type": "string", "description": "Customer UID" },
+        "amount": { "type": "number", "description": "Invoice amount" },
+        "month": { "type": "string", "description": "Month of invoice (YYYY-MM)" },
+        "status": { "type": "string", "enum": ["paid", "unpaid"], "description": "Billing status" },
+        "createdAt": { "type": "string", "description": "Generation date" }
+      },
+      "required": ["id", "customerId", "amount", "month", "status", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profiles for auth and roles"
+    },
+    "/customers/{customerId}": {
+      "schema": "customers",
+      "description": "Customer broadband profiles"
+    },
+    "/packages/{packageId}": {
+      "schema": "packages",
+      "description": "Internet subscription speed packages"
+    },
+    "/payments/{paymentId}": {
+      "schema": "payments",
+      "description": "Billing payments"
+    },
+    "/deposits/{depositId}": {
+      "schema": "deposits",
+      "description": "Staff cash deposits"
+    },
+    "/salaryRequests/{salaryRequestId}": {
+      "schema": "salaryRequests",
+      "description": "Salary withdrawal requests"
+    },
+    "/tickets/{ticketId}": {
+      "schema": "tickets",
+      "description": "Support tickets"
+    },
+    "/zones/{zoneId}": {
+      "schema": "zones",
+      "description": "Broadband zones"
+    },
+    "/areas/{areaId}": {
+      "schema": "areas",
+      "description": "Broadband areas"
+    },
+    "/expenses/{expenseId}": {
+      "schema": "expenses",
+      "description": "Office expenses"
+    },
+    "/invoices/{invoiceId}": {
+      "schema": "invoices",
+      "description": "Monthly invoices"
+    }
+  }
+}

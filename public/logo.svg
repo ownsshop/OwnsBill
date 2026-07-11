@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <!-- Definition for gradients if needed -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052D4" />
+      <stop offset="50%" stop-color="#4364F7" />
+      <stop offset="100%" stop-color="#6FB1FC" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background is transparent -->
+
+  <!-- Outer Orbit/Circle (C-shape blue band on the left) -->
+  <path d="M 250,430 A 180,180 0 1,1 250,70" fill="none" stroke="url(#blueGrad)" stroke-width="24" stroke-linecap="round" />
+
+  <!-- Wi-Fi Waves at the top (centered around the red dot) -->
+  <circle cx="150" cy="110" r="16" fill="#D32F2F" />
+  <!-- Wi-Fi arcs -->
+  <path d="M 115 90 A 45 45 0 0 1 185 90" fill="none" stroke="#0052D4" stroke-width="6" stroke-linecap="round" />
+  <path d="M 95 70 A 75 75 0 0 1 205 70" fill="none" stroke="#0052D4" stroke-width="6" stroke-linecap="round" />
+
+  <!-- Data Packets (Green and Red squares scattering on the top-right) -->
+  <!-- Row 1 -->
+  <rect x="250" y="30" width="16" height="12" rx="2" fill="#2E7D32" transform="rotate(15 250 30)" />
+  <rect x="290" y="25" width="14" height="14" rx="2" fill="#2E7D32" transform="rotate(-10 290 25)" />
+  <rect x="330" y="35" width="12" height="12" rx="2" fill="#2E7D32" transform="rotate(5 330 35)" />
+  <rect x="370" y="45" width="15" height="11" rx="2" fill="#2E7D32" transform="rotate(25 370 45)" />
+
+  <!-- Row 2 -->
+  <rect x="270" y="70" width="15" height="15" rx="2" fill="#2E7D32" transform="rotate(-5 270 70)" />
+  <rect x="310" y="80" width="12" height="12" rx="2" fill="#D32F2F" transform="rotate(20 310 80)" />
+  <rect x="350" y="75" width="16" height="12" rx="2" fill="#2E7D32" transform="rotate(-15 350 75)" />
+  <rect x="390" y="90" width="14" height="14" rx="2" fill="#2E7D32" transform="rotate(10 390 90)" />
+
+  <!-- Row 3 -->
+  <rect x="290" y="120" width="16" height="12" rx="2" fill="#2E7D32" transform="rotate(8 290 120)" />
+  <rect x="330" y="130" width="15" height="15" rx="2" fill="#2E7D32" transform="rotate(-12 330 130)" />
+  <rect x="365" y="125" width="12" height="12" rx="2" fill="#D32F2F" transform="rotate(45 365 125)" />
+  <rect x="410" y="140" width="16" height="16" rx="2" fill="#2E7D32" transform="rotate(15 410 140)" />
+
+  <!-- Row 4 -->
+  <rect x="315" y="170" width="14" height="14" rx="2" fill="#2E7D32" transform="rotate(-20 315 170)" />
+  <rect x="355" y="180" width="16" height="12" rx="2" fill="#2E7D32" transform="rotate(5 355 180)" />
+
+  <!-- Bottom Data Packets (Red scattering at the bottom-right opening) -->
+  <rect x="250" y="390" width="14" height="14" rx="2" fill="#D32F2F" transform="rotate(12 250 390)" />
+  <rect x="285" y="415" width="16" height="12" rx="2" fill="#D32F2F" transform="rotate(-15 285 415)" />
+  <rect x="320" y="395" width="12" height="12" rx="2" fill="#D32F2F" transform="rotate(25 320 395)" />
+  <rect x="345" y="425" width="15" height="15" rx="2" fill="#D32F2F" transform="rotate(-5 345 425)" />
+  <rect x="380" y="405" width="16" height="12" rx="2" fill="#D32F2F" transform="rotate(18 380 405)" />
+  <rect x="415" y="415" width="12" height="12" rx="2" fill="#D32F2F" transform="rotate(-30 415 415)" />
+
+  <!-- Central Brand Section -->
+  <g transform="translate(10, 0)">
+    <!-- Red ribbon/capsule with rounded right end -->
+    <path d="M 30,200 L 260,200 A 45,45 0 0,1 260,290 L 30,290 Z" fill="#D32F2F" />
+    
+    <!-- White Left Tab edge -->
+    <path d="M 30,195 L 42,195 A 5,5 0 0,1 42,295 L 30,295 Z" fill="#B71C1C" opacity="0.8" />
+
+    <!-- "Owns" text in white -->
+    <text x="60" y="265" font-family="'Inter', 'Arial Black', sans-serif" font-weight="900" font-size="62" fill="#FFFFFF" letter-spacing="-1">Owns</text>
+
+    <!-- "Link" text in grey/silver -->
+    <text x="320" y="265" font-family="'Inter', 'Arial', sans-serif" font-weight="700" font-size="62" fill="#8E8E93" letter-spacing="-1">Link</text>
+
+    <!-- Subtitle -->
+    <text x="75" y="325" font-family="'Inter', 'Arial', sans-serif" font-weight="600" font-size="16.5" fill="#7C7C80" letter-spacing="2.5">OPTICAL WAY NETWORKING SERVICE</text>
+  </g>
+</svg>

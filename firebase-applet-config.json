@@ -1,0 +1,10 @@
+{
+  "projectId": "owns-billing",
+  "appId": "1:1036958677443:web:fbd4ee2f0d0a24c4582576",
+  "apiKey": "AIzaSyBZUlhoH3pPZWBmBZko-SfIJpV6jBoefRM",
+  "authDomain": "owns-billing.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "owns-billing.firebasestorage.app",
+  "messagingSenderId": "1036958677443",
+  "measurementId": ""
+}
